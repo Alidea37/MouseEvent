@@ -1,6 +1,7 @@
 // fig 12.28 mousetrackerframe.java pp 507-508
 ///*
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.BorderLayout;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -15,6 +16,8 @@ public class MouseTrackerFrame extends JFrame {
 	final JLabel statusBar; // displays event information
 	
 	// mousetrackerframe constructor sets up GUI and registers mouse event handlers
+	
+	
 	
 	public MouseTrackerFrame()
 	{
@@ -94,7 +97,9 @@ public class MouseTrackerFrame extends JFrame {
 			statusBar.setText(String.format("Move at [%d, %d]",
 					event.getX(), event.getY()));
 		}
+	
 	}
+
 }
 
 	//**/

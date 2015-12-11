@@ -4,7 +4,6 @@
 //import MouseTFrame.MouseTrackerFrame;
 import javax.swing.JFrame;
 
-
 public class MouseTracker {
 	
 	public static void main(String[] args) {
@@ -14,12 +13,17 @@ public class MouseTracker {
 	//	mouseTrackerFrame.setSize(500, 500);
 	//	mouseTrackerFrame.setVisible(true);
 	
-		System.out.println("test2");
+	//	PaintPanel paintPanel = new PaintPanel();
+	//	paintPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	//	paintPanel.setSize(500, 500);
+	//	paintPanel.setVisible(true);
 		
 		MouseColor mouseColor1 = new MouseColor();
 		mouseColor1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mouseColor1.setSize(500, 500);
 		mouseColor1.setVisible(true);
+	
+		
 	}
 
 }
