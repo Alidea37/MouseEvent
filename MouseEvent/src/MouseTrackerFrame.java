@@ -19,6 +19,7 @@ public class MouseTrackerFrame extends JFrame {
 	
 	
 	
+	
 	public MouseTrackerFrame()
 	{
 		super("Mouse Events");
@@ -54,7 +55,7 @@ public class MouseTrackerFrame extends JFrame {
 		{
 			statusBar.setText(String.format("Released at [%d, %d]",
 					event.getX(), event.getY()));
-			mousePanel.setBackground(Color.BLUE);
+			mousePanel.setBackground(Color.BLUE); // I added different colors to make each mouse action distinct
 		}
 	
 	// handle event when mouse is released
