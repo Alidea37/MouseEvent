@@ -22,9 +22,15 @@ import java.security.*;
 
 public class MouseColor  extends MouseTrackerFrame
 {
+	// count all the mouse events
 	
 	private int clickcount = 0;
 	private int dragcount = 0;
+	private int entercount = 0;
+	private int movecount = 0;
+	private int exitcount = 0;
+	private int presscount = 0;
+	private int releasecount = 0;
 	
 	private Random random = new Random();
 	
@@ -52,32 +58,22 @@ public class MouseColor  extends MouseTrackerFrame
 			@Override
 			public void mousePressed(MouseEvent event)
 			{
+				if (presscount < 999){		// count how many times mouse is pressed
+					presscount = presscount + 1;
+				
 				statusBar.setText(String.format("Clicked at [%d, %d]",
 						event.getX(), event.getY()));
 				mousePanel.setBackground(Color.MAGENTA);
 				mousePanel.repaint();
-			
+				}
 			}
 
 			@Override
 			public void mouseDragged(MouseEvent event) { 	// mouse is dragged
 				
-				try {
-					outFileStream = new FileOutputStream(out);
-					PrintWriter outStream = new PrintWriter(outFileStream);
-
-						if (dragcount < 999){		// count the number of total colors cycled through drag events
-							dragcount = dragcount + 1;
-							outStream.println("The mouse was dragged " +dragcount);
-										
-									}
-										outStream.close();
-											} catch (FileNotFoundException e) {
-											// TODO Auto-generated catch block
-											e.printStackTrace();
-													
-													}
-				
+				if (dragcount < 999){		// count the number of total colors cycled through drag events
+					dragcount = dragcount + 1;
+					
 				int randomColor = random.nextInt(8); // randomizes colors for mouse drag event
 				
 				statusBar.setText(String.format("Dragged at [%d, %d]",
@@ -103,23 +99,42 @@ public class MouseColor  extends MouseTrackerFrame
 					catch (Exception e){};break;}
 					case 8:{mousePanel.setBackground(colors[8]); try{Thread.sleep(200);}
 					catch (Exception e){};break;}
+					}
+				}
+			}
+			@Override
+			public void mouseMoved(MouseEvent event) { // mouse is moved
+				if (movecount < 999){		// count the number of times mouse is moved
+					movecount = movecount + 1;
 				}
 			}
 
 			@Override
-			public void mouseMoved(MouseEvent event) { // mouse is moved
-				
-				
-			}
-
-			@Override
 			public void mouseEntered(MouseEvent event) { // mouse enters JFrame
-				
-			}
+				try {
+					
+					// write events to a textfile
+					
+					outFileStream = new FileOutputStream(out);
+					PrintWriter outStream = new PrintWriter(outFileStream);
+
+						if (entercount < 999){		// count the number of times mouse enters
+							entercount = entercount + 1;
+							outStream.println("The mouse entered JPanel: " +entercount+ " \nwas dragged: " +dragcount+ " \nwas moved: " +movecount+ " \nwas pressed: " +presscount+ " \nwas released: " +releasecount+ " \nand exited: " +exitcount);
+										
+									}
+										outStream.close();
+											} catch (FileNotFoundException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();				
+										}
+									}
 
 			@Override
 			public void mouseExited(MouseEvent event) { // mouse exits JFrame
-				
+				if (exitcount < 999){		// count the number of exits from JPanel
+					exitcount = exitcount + 1;
+				}
 				
 			}
 
@@ -128,6 +143,7 @@ public class MouseColor  extends MouseTrackerFrame
 			
 				if (clickcount < 5){		// If the counter is less than 5 run game
 					clickcount = clickcount + 1;
+					
 					statusBar.setText(String.format("Clicked at [%d, %d]" + clickcount,
 					event.getX(), event.getY()));
 				}
@@ -141,7 +157,9 @@ public class MouseColor  extends MouseTrackerFrame
 
 			@Override
 			public void mouseReleased(MouseEvent event) { // release mouse
-				
+				if (releasecount < 999){		// count the number of releases
+					releasecount = releasecount + 1;
+				}
 			}
 		
 		}

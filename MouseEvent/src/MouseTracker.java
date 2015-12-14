@@ -13,10 +13,6 @@ public class MouseTracker {
 	//	mouseTrackerFrame.setSize(500, 500);
 	//	mouseTrackerFrame.setVisible(true);
 	
-	//	PaintPanel paintPanel = new PaintPanel();
-	//	paintPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	//	paintPanel.setSize(500, 500);
-	//	paintPanel.setVisible(true);
 		
 		MouseColor mouseColor1 = new MouseColor();
 		mouseColor1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
