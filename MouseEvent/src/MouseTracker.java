@@ -19,7 +19,7 @@ public class MouseTracker {
 	//	paintPanel.setVisible(true);
 		
 		MouseColor mouseColor1 = new MouseColor();
-		mouseColor1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // change to hide on close later
+		mouseColor1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		mouseColor1.setSize(500, 500);
 		mouseColor1.setVisible(true);
 	

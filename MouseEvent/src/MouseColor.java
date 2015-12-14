@@ -1,3 +1,6 @@
+// referenced Cordell & Mandy's FileIO sample
+//https://moodle.carroll.edu/pluginfile.php/30497/mod_resource/content/1/AlternateFileMethods.java
+
 import java.awt.Color;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -23,12 +26,13 @@ public class MouseColor  extends MouseTrackerFrame
 	private int clickcount = 0;
 	private int dragcount = 0;
 	
-	Random random = new Random();
+	private Random random = new Random();
 	
+	// array of colors for mouse dragged.
 	private static final Color[] colors = {Color.BLACK, Color.BLUE, Color.LIGHT_GRAY, Color.CYAN, Color.DARK_GRAY, Color.ORANGE, Color.PINK, Color.YELLOW, Color.RED, Color.GRAY};
 	
-	File out = new File("MouseActivity.txt");
-	FileOutputStream outFileStream;
+	private File out = new File("MouseActivity.txt"); // create a file to count mouse dragged event
+	private FileOutputStream outFileStream;
 	
 	
 	
@@ -36,7 +40,7 @@ public class MouseColor  extends MouseTrackerFrame
 	{
 		// create and register listener for mouse and mouse motion events
 				MouseHandler handler = new MouseHandler();
-				mousePanel.addMouseListener(handler);
+				mousePanel.addMouseListener(handler); 
 				mousePanel.addMouseMotionListener(handler);
 	}
 	
@@ -56,13 +60,13 @@ public class MouseColor  extends MouseTrackerFrame
 			}
 
 			@Override
-			public void mouseDragged(MouseEvent event) { 	
+			public void mouseDragged(MouseEvent event) { 	// mouse is dragged
 				
 				try {
 					outFileStream = new FileOutputStream(out);
 					PrintWriter outStream = new PrintWriter(outFileStream);
 
-						if (dragcount < 899){		// If the counter is less than 5 run game
+						if (dragcount < 999){		// count the number of total colors cycled through drag events
 							dragcount = dragcount + 1;
 							outStream.println("The mouse was dragged " +dragcount);
 										
@@ -103,24 +107,24 @@ public class MouseColor  extends MouseTrackerFrame
 			}
 
 			@Override
-			public void mouseMoved(MouseEvent event) {
+			public void mouseMoved(MouseEvent event) { // mouse is moved
 				
 				
 			}
 
 			@Override
-			public void mouseEntered(MouseEvent event) {
+			public void mouseEntered(MouseEvent event) { // mouse enters JFrame
 				
 			}
 
 			@Override
-			public void mouseExited(MouseEvent event) {
+			public void mouseExited(MouseEvent event) { // mouse exits JFrame
 				
 				
 			}
 
 			@Override
-			public void mouseClicked(MouseEvent event) {
+			public void mouseClicked(MouseEvent event) { // mouse is clicked
 			
 				if (clickcount < 5){		// If the counter is less than 5 run game
 					clickcount = clickcount + 1;
@@ -136,7 +140,7 @@ public class MouseColor  extends MouseTrackerFrame
 				}
 
 			@Override
-			public void mouseReleased(MouseEvent event) {
+			public void mouseReleased(MouseEvent event) { // release mouse
 				
 			}
 		

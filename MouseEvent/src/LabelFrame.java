@@ -3,8 +3,6 @@
 // Credit to Delanie for assistance in creating methods for each JFrame
 
 //import java.awt.FlowLayout;
-
-
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +14,7 @@ import javax.swing.ImageIcon;
 public class LabelFrame extends MouseTrackerFrame {
 
 	
-	public Graphics getGraphics1(){ 				// create method to hold a jframe containing the witch picture
+	public Graphics getGraphics1(){ 				// Method holds JPanel
 		JPanel Bear = new JPanel(); 				// creates a new JPanel
 		LabelFrame pic = new LabelFrame();			// show the image
 		pic.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); 	// Closes JFrame without ending program

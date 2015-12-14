@@ -12,15 +12,15 @@ import javax.swing.JPanel;
 
 public class MouseTrackerFrame extends JFrame {
 
-	final JPanel mousePanel; // panel in which mouse events occur
-	final JLabel statusBar; // displays event information
+	public final JPanel mousePanel; // panel in which mouse events occur
+	public final JLabel statusBar; // displays event information
 	
 	// mousetrackerframe constructor sets up GUI and registers mouse event handlers
 	
 	
 	
 	
-	public MouseTrackerFrame()
+	public MouseTrackerFrame() // constructor for JPanel
 	{
 		super("Mouse Events");
 		
