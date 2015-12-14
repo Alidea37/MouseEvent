@@ -1,6 +1,6 @@
-The mouse entered JPanel: 4 
-was dragged: 12 
-was moved: 63 
-was pressed: 8 
-was released: 8 
-and exited: 3
+The mouse entered JPanel: 2 
+was dragged: 6 
+was moved: 113 
+was pressed: 2 
+was released: 2 
+and exited: 1

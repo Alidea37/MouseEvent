@@ -8,6 +8,7 @@ import java.util.Random;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.io.File;
@@ -82,29 +83,37 @@ public class MouseColor  extends MouseTrackerFrame
 			
 				{
 					case 0:{mousePanel.setBackground(colors[0]); try{Thread.sleep(200);} // I had to place a break at the end of each case to make it select more than one color
-					catch (Exception e){}; break;}
+						catch (Exception e){}; break;}
+					
 					case 1:{mousePanel.setBackground(colors[1]); try{Thread.sleep(200);} // Added a pause in each case to slow them down.
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 2:{mousePanel.setBackground(colors[2]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 3:{mousePanel.setBackground(colors[3]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 4:{mousePanel.setBackground(colors[4]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 5:{mousePanel.setBackground(colors[5]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 6:{mousePanel.setBackground(colors[6]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 7:{mousePanel.setBackground(colors[7]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
+					
 					case 8:{mousePanel.setBackground(colors[8]); try{Thread.sleep(200);}
-					catch (Exception e){};break;}
+						catch (Exception e){};break;}
 					}
 				}
 			}
 			@Override
 			public void mouseMoved(MouseEvent event) { // mouse is moved
-				if (movecount < 999){		// count the number of times mouse is moved
+				if (movecount < 999){		// counts when mouse is moved 
 					movecount = movecount + 1;
 				}
 			}
@@ -152,6 +161,11 @@ public class MouseColor  extends MouseTrackerFrame
 						{
 							LabelFrame pic = new LabelFrame(); // to get bear pic
 							pic.getGraphics1();
+							
+								//try{Thread.sleep(1000);}
+								//catch (Exception e){};
+							//JOptionPane.showMessageDialog(null, "The session is at an end.");
+							//System.exit(0);
 						}
 				}
 
